@@ -1,0 +1,15 @@
+import ctypes
+import numpy as np
+
+test = ctypes.CDLL('/home/bil/Code/add.so')
+
+test.add.argtypes = [ctypes.c_int, ctypes.c_int]
+test.add.restype = ctypes.c_int
+
+args = (1,4)
+
+print(args)
+
+sum = test.add(args[0], args[1])
+
+print(sum)

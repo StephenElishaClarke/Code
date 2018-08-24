@@ -1,0 +1,8 @@
+gcc -fPIC -Wall -c -I/usr/include/flycapture  /tmp/FlyCapture2Test_C/CustomCapture/FlyCapture2Test_C.c -o /tmp/FlyCapture2Test_C/CustomCapture/FlyCapture2Test_C.o
+
+gcc -shared /tmp/FlyCapture2Test_C/CustomCapture/FlyCapture2Test_C.o -o /tmp/FlyCapture2Test_C/CustomCapture/FlyCapture2Test_C.so -lflycapture-c -lflycapture
+
+
+gcc -fPIC -Wall -c -I/usr/include/flycapture  ~/Code/capture_library.c -o ~/Code/capture_library.o; gcc -shared -I/usr/include/flycapture  ~/Code/capture_library.o -o ~/Code/capture_library.so -lflycapture-c -lflycapture
+
+gcc -fPIC -Wall -I/usr/include/flycapture ./capture_standalone.c -lflycapture-c -lflycapture -o ~/Code/capture_standalone
